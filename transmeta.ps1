@@ -5,5 +5,5 @@ foreach ($file in Get-ChildItem -Path input -Filter *.NEF) {
         Write-Output "No corresponding png file for $file"
         continue
     }
-    & exiftool -TagsFromFile $file.FullName -CameraModelName -Make -LensModel -Lens -LensMake -FocalLength -FocalLengthIn35mmFormat -FNumber -ISO -ExposureTime -ShutterSpeedValue -Model $png
+    & .\exiftool\exiftool.exe -TagsFromFile $file.FullName -CameraModelName -Make -LensModel -Lens -LensMake -FocalLength -FocalLengthIn35mmFormat -FNumber -ISO -ExposureTime -ShutterSpeedValue -Model $png
 }
